@@ -1,0 +1,70 @@
+{
+  "name": "merge-deep",
+  "description": "Recursively merge values in a javascript object.",
+  "version": "0.1.2",
+  "homepage": "https://github.com/jonschlinkert/merge-deep",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/merge-deep.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/merge-deep/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jonschlinkert/merge-deep/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "^4.0.4",
+    "verb": ">= 0.2.6",
+    "verb-tag-jscomments": ">= 0.2.0"
+  },
+  "keywords": [
+    "array",
+    "arrays",
+    "clone",
+    "clone-deep",
+    "copy",
+    "deep",
+    "deep-clone",
+    "deep-merge",
+    "extend",
+    "javascript",
+    "key",
+    "keys",
+    "merge",
+    "merge-deep",
+    "object",
+    "objects",
+    "prop",
+    "properties",
+    "property",
+    "props",
+    "regex",
+    "regexp",
+    "util",
+    "utilities",
+    "utility",
+    "utils",
+    "value",
+    "values"
+  ],
+  "dependencies": {
+    "clone-deep": "^0.1.0",
+    "is-plain-object": "^0.1.0"
+  }
+}

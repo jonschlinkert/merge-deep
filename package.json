@@ -1,7 +1,7 @@
 {
   "name": "merge-deep",
   "description": "Recursively merge values in a javascript object.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/jonschlinkert/merge-deep",
   "author": {
     "name": "Jon Schlinkert",
@@ -64,6 +64,7 @@
     "values"
   ],
   "dependencies": {
+    "array-slice": "^0.2.2",
     "clone-deep": "^0.1.0",
     "is-plain-object": "^0.1.0"
   }

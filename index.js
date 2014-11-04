@@ -7,17 +7,26 @@
 
 'use strict';
 
+var slice = require('array-slice');
 var cloneDeep = require('clone-deep');
 var isObject = require('is-plain-object');
 
 module.exports = function merge(orig, objects) {
-  var args = [].slice.call(arguments, 1);
+  var args = slice(arguments, 1);
+  if (orig == null) {
+    return {};
+  }
+
   var len = args.length;
+  if (len === 0) {
+    return orig;
+  }
 
   var o = cloneDeep(orig);
+  var i = 0;
 
-  for (var i = 0; i < len; i++) {
-    var obj = args[i];
+  while (i < len) {
+    var obj = args[i++];
     for (var key in obj) {
       if (!hasOwn(obj, key)) {
         continue;

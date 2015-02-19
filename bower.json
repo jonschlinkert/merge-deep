@@ -1,7 +1,48 @@
 {
   "name": "merge-deep",
-  "version": "0.1.2",
+  "description": "Recursively merge values in a javascript object.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/merge-deep.git"
+  },
+  "homepage": "https://github.com/jonschlinkert/merge-deep",
+  "authors": [
+    {
+      "name": "Jon Schlinkert",
+      "homepage": "https://github.com/jonschlinkert"
+    }
+  ],
   "main": [
     "index.js"
+  ],
+  "dependencies": {
+    "array-slice": "^0.2.2",
+    "clone-deep": "^0.1.0",
+    "is-plain-object": "^0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "^4.0.4"
+  },
+  "keywords": [
+    "clone",
+    "clone-deep",
+    "copy",
+    "deep",
+    "deep-clone",
+    "deep-merge",
+    "extend",
+    "key",
+    "keys",
+    "merge",
+    "merge-deep",
+    "object",
+    "objects",
+    "prop",
+    "properties",
+    "property",
+    "props",
+    "value",
+    "values"
   ]
 }

@@ -1,7 +1,7 @@
 /*!
  * merge-deep <https://github.com/jonschlinkert/merge-deep>
  *
- * Copyright (c) 2014 Jon Schlinkert, contributors.
+ * Copyright (c) 2014-2015 Jon Schlinkert.
  * Licensed under the MIT License
  */
 

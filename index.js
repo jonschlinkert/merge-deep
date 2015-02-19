@@ -39,7 +39,6 @@ module.exports = function merge(orig, objects) {
       } else {
         o[key] = cloneDeep(val);
       }
-
     }
   }
   return o;

@@ -11,7 +11,6 @@ var should = require('should');
 var merge = require('./');
 
 // some of these tests were sourced from mout/mout
-
 describe('mergeDeep', function () {
   it('should merge object properties without affecting any object', function () {
     var obj1 = {a: 0, b: 1};

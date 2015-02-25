@@ -7,7 +7,7 @@
 
 'use strict';
 
-var should = require('should');
+require('should');
 var merge = require('./');
 
 // some of these tests were sourced from mout/mout

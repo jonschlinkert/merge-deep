@@ -30,9 +30,7 @@ merge({a: {b: {c: 'c', d: 'd'}}}, {a: {b: {e: 'e', f: 'f'}}});
 
 These are other projects I maintain:
 
-  - [arrayify-compact](https://github.com/jonschlinkert/arrayify-compact)
-  - [compact-object](https://github.com/jonschlinkert/compact-object)
-  - [delete](https://github.com/jonschlinkert/delete)
+  - [extend-shallow](https://github.com/jonschlinkert/extend-shallow)
   - [flatten-object](https://github.com/jonschlinkert/flatten-object)
   - [for-in](https://github.com/jonschlinkert/for-in)
   - [for-own](https://github.com/jonschlinkert/for-own)

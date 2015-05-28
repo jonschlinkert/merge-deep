@@ -5,6 +5,10 @@
     "type": "git",
     "url": "git://github.com/jonschlinkert/merge-deep.git"
   },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/jonschlinkert/merge-deep/blob/master/LICENSE"
+  },
   "homepage": "https://github.com/jonschlinkert/merge-deep",
   "authors": [
     {
@@ -16,13 +20,12 @@
     "index.js"
   ],
   "dependencies": {
-    "array-slice": "^0.2.2",
-    "clone-deep": "^0.1.0",
-    "is-plain-object": "^0.1.0"
+    "clone-deep": "^0.1.1",
+    "is-plain-object": "^2.0.0"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "^4.0.4"
+    "mocha": "^2.2.5",
+    "should": "^6.0.3"
   },
   "keywords": [
     "clone",

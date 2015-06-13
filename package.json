@@ -1,7 +1,7 @@
 {
   "name": "merge-deep",
   "description": "Recursively merge values in a javascript object.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/jonschlinkert/merge-deep",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/merge-deep",
@@ -9,9 +9,6 @@
     "url": "https://github.com/jonschlinkert/merge-deep/issues"
   },
   "license": "MIT",
-  "files": [
-    "index.js"
-  ],
   "files": [
     "index.js"
   ],

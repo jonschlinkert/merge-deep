@@ -11,8 +11,8 @@ var cloneDeep = require('clone-deep');
 var isObject = require('is-plain-object');
 
 module.exports = function merge(orig, objects) {
-  if (!isObject(o)) return {};
-  if (!isObject(objects)) return o;
+  if (!isObject(orig)) return {};
+  if (!isObject(objects)) return orig;
 
   var len = arguments.length - 1;
   var o = cloneDeep(orig);

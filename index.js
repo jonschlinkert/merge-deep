@@ -7,34 +7,36 @@
 
 'use strict';
 
-var cloneDeep = require('clone-deep');
-var isObject = require('is-plain-object');
+var lazy = require('lazy-cache')(require);
+lazy('clone-deep', 'clone');
+lazy('is-extendable', 'isObject');
 
-module.exports = function merge(orig, objects) {
-  if (!isObject(orig)) return {};
-  if (!isObject(objects)) return orig;
+module.exports = function mergeDeep(orig, objects) {
+  if (!lazy.isObject(orig)) orig = {};
+  var len = arguments.length;
+  var target = lazy.clone(orig);
 
-  var len = arguments.length - 1;
-  var o = cloneDeep(orig);
-
-  for (var i = 0; i < len; i++) {
-    var obj = arguments[i + 1];
-
-    for (var key in obj) {
-      if (!hasOwn(obj, key)) {
-        continue;
-      }
-
-      var val = obj[key];
-      if (isObject(val) && isObject(o[key])) {
-        o[key] = merge(o[key], val);
-      } else {
-        o[key] = cloneDeep(val);
-      }
+  for (var i = 1; i < len; i++) {
+    var val = arguments[i];
+    if (lazy.isObject(val)) {
+      merge(target, val);
     }
   }
-  return o;
+  return target;
 };
+
+function merge(target, obj) {
+  for (var key in obj) {
+    if (!hasOwn(obj, key)) continue;
+    var val = obj[key];
+    if (lazy.isObject(target[key])) {
+      target[key] = merge(target[key] || {}, val);
+    } else {
+      target[key] = lazy.clone(val);
+    }
+  }
+  return target;
+}
 
 function hasOwn(obj, key) {
   return Object.prototype.hasOwnProperty.call(obj, key);

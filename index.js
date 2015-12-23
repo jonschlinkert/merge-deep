@@ -7,18 +7,16 @@
 
 'use strict';
 
-var lazy = require('lazy-cache')(require);
-lazy('clone-deep', 'clone');
-lazy('is-extendable', 'isObject');
+var utils = require('./utils');
 
 module.exports = function mergeDeep(orig, objects) {
-  if (!lazy.isObject(orig)) orig = {};
+  if (!utils.isObject(orig)) orig = {};
   var len = arguments.length;
-  var target = lazy.clone(orig);
+  var target = utils.clone(orig);
 
   for (var i = 1; i < len; i++) {
     var val = arguments[i];
-    if (lazy.isObject(val)) {
+    if (utils.isObject(val)) {
       merge(target, val);
     }
   }
@@ -29,10 +27,10 @@ function merge(target, obj) {
   for (var key in obj) {
     if (!hasOwn(obj, key)) continue;
     var val = obj[key];
-    if (lazy.isObject(target[key])) {
+    if (utils.isObject(target[key])) {
       target[key] = merge(target[key] || {}, val);
     } else {
-      target[key] = lazy.clone(val);
+      target[key] = utils.clone(val);
     }
   }
   return target;

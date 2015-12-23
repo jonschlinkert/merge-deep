@@ -19,11 +19,6 @@
   "scripts": {
     "test": "mocha"
   },
-  "dependencies": {
-    "clone-deep": "^0.2.1",
-    "is-extendable": "^0.1.1",
-    "lazy-cache": "^0.2.3"
-  },
   "devDependencies": {
     "mocha": "*",
     "should": "*"
@@ -48,5 +43,17 @@
     "props",
     "value",
     "values"
-  ]
+  ],
+  "verb": {
+    "related": {
+      "list": [
+        "assign-deep",
+        "defaults-deep",
+        "extend-shallow",
+        "merge-deep",
+        "mixin-deep",
+        "omit-deep"
+      ]
+    }
+  }
 }

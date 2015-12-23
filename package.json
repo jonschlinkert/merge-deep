@@ -10,7 +10,8 @@
   },
   "license": "MIT",
   "files": [
-    "index.js"
+    "index.js",
+    "utils.js"
   ],
   "main": "index.js",
   "engines": {
@@ -18,6 +19,11 @@
   },
   "scripts": {
     "test": "mocha"
+  },
+  "dependencies": {
+    "clone-deep": "^0.2.4",
+    "is-extendable": "^0.1.1",
+    "lazy-cache": "^1.0.3"
   },
   "devDependencies": {
     "mocha": "*",
@@ -54,6 +60,9 @@
         "mixin-deep",
         "omit-deep"
       ]
-    }
+    },
+    "plugins": [
+      "gulp-format-md"
+    ]
   }
 }

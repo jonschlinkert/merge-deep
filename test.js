@@ -12,8 +12,8 @@ require('should');
 var merge = require('./');
 
 // some of these tests were sourced from mout/mout
-describe('mergeDeep', function () {
-  it('should merge object properties without affecting any object', function () {
+describe('mergeDeep', function() {
+  it('should merge object properties without affecting any object', function() {
     var obj1 = {a: 0, b: 1};
     var obj2 = {c: 2, d: 3};
     var obj3 = {a: 4, d: 5};
@@ -26,14 +26,14 @@ describe('mergeDeep', function () {
     actual.should.not.eql(obj3);
   });
 
-  it('should do a deep merge', function () {
+  it('should do a deep merge', function() {
     var obj1 = {a: {b: 1, c: 1, d: {e: 1, f: 1}}};
     var obj2 = {a: {b: 2, d : {f : 'f'} }};
 
     merge(obj1, obj2).should.eql({a: {b: 2, c: 1, d: {e: 1, f: 'f'} }});
   });
 
-  it('should clone objects during merge', function () {
+  it('should clone objects during merge', function() {
     var obj1 = {a: {b :1}};
     var obj2 = {a: {c :2}};
 
@@ -43,7 +43,7 @@ describe('mergeDeep', function () {
     actual.a.should.not.eql(obj2.a);
   });
 
-  it('should deep clone arrays during merge', function () {
+  it('should deep clone arrays during merge', function() {
     var obj1 = {a: [1, 2, [3, 4]]};
     var obj2 = {b : [5, 6]};
 

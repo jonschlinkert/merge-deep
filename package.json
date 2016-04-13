@@ -21,14 +21,14 @@
     "test": "mocha"
   },
   "dependencies": {
+    "arr-union": "^3.1.0",
     "clone-deep": "^0.2.4",
-    "is-extendable": "^0.1.1",
+    "kind-of": "^3.0.2",
     "lazy-cache": "^1.0.3"
   },
   "devDependencies": {
     "gulp-format-md": "^0.1.7",
-    "mocha": "*",
-    "should": "*"
+    "mocha": "^2.4.5"
   },
   "keywords": [
     "clone",
@@ -52,6 +52,15 @@
     "values"
   ],
   "verb": {
+    "run": true,
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
     "related": {
       "list": [
         "assign-deep",
@@ -62,8 +71,11 @@
         "omit-deep"
       ]
     },
-    "plugins": [
-      "gulp-format-md"
-    ]
+    "reflinks": [
+      "verb"
+    ],
+    "lint": {
+      "reflinks": true
+    }
   }
 }

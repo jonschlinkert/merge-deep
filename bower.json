@@ -11,12 +11,13 @@
     "index.js"
   ],
   "dependencies": {
-    "clone-deep": "^0.1.1",
-    "is-plain-object": "^2.0.0"
+    "arr-union": "^3.1.0",
+    "clone-deep": "^0.2.4",
+    "kind-of": "^3.0.2"
   },
   "devDependencies": {
-    "mocha": "^2.2.5",
-    "should": "^6.0.3"
+    "gulp-format-md": "^0.1.7",
+    "mocha": "^2.4.5"
   },
   "keywords": [
     "clone",
@@ -38,5 +39,22 @@
     "props",
     "value",
     "values"
+  ],
+  "version": "3.0.0",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/merge-deep/issues"
+  },
+  "files": [
+    "index.js"
+  ],
+  "ignore": [
+    "actual",
+    "bower_components",
+    "fixtures",
+    "node_modules",
+    "temp",
+    "test",
+    "test.js",
+    "tmp"
   ]
 }

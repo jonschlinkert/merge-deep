@@ -10,8 +10,7 @@
   },
   "license": "MIT",
   "files": [
-    "index.js",
-    "utils.js"
+    "index.js"
   ],
   "main": "index.js",
   "engines": {
@@ -23,8 +22,7 @@
   "dependencies": {
     "arr-union": "^3.1.0",
     "clone-deep": "^0.2.4",
-    "kind-of": "^3.0.2",
-    "lazy-cache": "^1.0.3"
+    "kind-of": "^3.0.2"
   },
   "devDependencies": {
     "gulp-format-md": "^0.1.7",

@@ -55,5 +55,5 @@ function hasOwn(obj, key) {
 }
 
 function isObject(val) {
-  return typeOf(val) === 'object' || typeOf(val) === 'function';
+  return typeOf(val) === 'object' || typeOf(val) === 'function' || typeOf(val) === 'regexp' || typeOf(val) === 'date';
 }

@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "arr-union": "^3.1.0",
-    "clone-deep": "^0.2.4",
+    "clone-deep": "^4.0.1",
     "kind-of": "^3.0.2"
   },
   "devDependencies": {

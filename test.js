@@ -134,4 +134,16 @@ describe('mergeDeep', function() {
     var actual = merge(fixture);
     assert.deepEqual(actual, fixture);
   });
+
+  it('should not clone invalid keys', function() {
+    var obj1 = { a: { b: 1 } };
+    var obj2 = JSON.parse('{ "a": { "c": 2 }, "constructor": { "keys": 42 } }');
+
+    var actual = merge({}, obj1, obj2);
+    assert.deepEqual(actual, { a: { b: 1, c: 2 } });
+    assert.notDeepEqual(actual.a, obj1.a);
+    assert.notDeepEqual(actual.a, obj2.a);
+    assert.notEqual(actual.keys, 42);
+    assert.notEqual(actual.constructor.keys, 42);
+  });
 });

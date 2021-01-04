@@ -32,7 +32,7 @@ module.exports = function mergeDeep(orig, objects) {
 
 function merge(target, obj) {
   for (var key in obj) {
-    if (key === '__proto__' || !hasOwn(obj, key)) {
+    if (!isValidKey(key) || !hasOwn(obj, key)) {
       continue;
     }
 
@@ -56,4 +56,8 @@ function hasOwn(obj, key) {
 
 function isObject(val) {
   return typeOf(val) === 'object' || typeOf(val) === 'function';
+}
+
+function isValidKey(key) {
+  return key !== '__proto__' && key !== 'constructor' && key !== 'prototype';
 }

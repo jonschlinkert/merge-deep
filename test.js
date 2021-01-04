@@ -146,4 +146,56 @@ describe('mergeDeep', function() {
     assert.notEqual(actual.keys, 42);
     assert.notEqual(actual.constructor.keys, 42);
   });
+
+  it('should allow being used for custom constructors', function() {
+    // The following setup code is a simple way to demonstrate multiple inheritance by merging the prototype of one class onto another
+    function Shape() {
+      this.type = '';
+    }
+
+    function Position(x, y) {
+      this.x = x || 0;
+      this.y = y || 0;
+    }
+
+    Position.prototype.stringify = function() {
+      return '(' + this.x + ', ' + this.y + ')';
+    };
+
+    function Moveable(x, y) {
+      Position.call(this, x, y);
+    }
+
+    // By making Moveable inherit from Position, allows us to test what happens when `constructor` is passed to `isValidKey`.
+    Moveable.prototype = Object.create(Position.prototype);
+    Moveable.prototype.constructor = Moveable;
+    Moveable.prototype = merge(Moveable.prototype, Position.prototype);
+
+    Moveable.prototype.move = function(x, y) {
+      this.x += x;
+      this.y += y;
+    };
+
+    Moveable.prototype.position = function() {
+      return this.stringify();
+    };
+
+    function Rectangle() {
+      Shape.call(this);
+      Moveable.call(this);
+      this.type = 'rectangle';
+    }
+
+    // Single inheritance using Object.create
+    Rectangle.prototype = Object.create(Shape.prototype);
+    Rectangle.prototype.constructor = Rectangle;
+
+    // This is the test to ensure that `merge-deep` can be used with prototypal inheritance
+    Rectangle.prototype = merge(Rectangle.prototype, Moveable.prototype);
+
+    var rectangle = new Rectangle();
+    assert.equal(rectangle.position(), '(0, 0)');
+    rectangle.move(10, 20);
+    assert.equal(rectangle.position(), '(10, 20)');
+  });
 });

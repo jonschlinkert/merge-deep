@@ -17,4 +17,5 @@ node_js:
 matrix:
   fast_finish: true
   allow_failures:
+    - node_js: 'node'
     - node_js: '0.8'

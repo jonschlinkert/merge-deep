@@ -1,7 +1,7 @@
 /*!
  * merge-deep <https://github.com/jonschlinkert/merge-deep>
  *
- * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Copyright (c) 2014-2021, Jon Schlinkert.
  * Licensed under the MIT License.
  */
 
@@ -55,7 +55,7 @@ function hasOwn(obj, key) {
 }
 
 function isObject(val) {
-  return typeOf(val) === 'object' || typeOf(val) === 'function';
+  return typeOf(val) === 'object' || typeOf(val) === 'function' || typeOf(val) === "regexp" || typeOf(val) === "date";
 }
 
 function isValidKey(key) {
